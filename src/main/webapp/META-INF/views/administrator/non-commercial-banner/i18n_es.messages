@@ -18,7 +18,5 @@ administrator.non-commercial-banner.form.label.picture = Imagen:
 administrator.non-commercial-banner.form.label.jingle = Jingle: 
 administrator.non-commercial-banner.form.label.targetUrl = Url: 
 
-administrator.non-commercial-banner.form.button.update = Actualizar
+
 administrator.non-commercial-banner.form.button.return = Volver
-administrator.non-commercial-banner.form.button.create = Crear
-administrator.non-commercial-banner.form.button.delete = Borrar
