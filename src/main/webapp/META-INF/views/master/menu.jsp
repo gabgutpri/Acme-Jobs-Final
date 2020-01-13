@@ -71,7 +71,6 @@
      		
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
-
 	
 		<%-- COSAS DE WORKER --%>
 		
