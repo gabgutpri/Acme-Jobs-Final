@@ -282,7 +282,6 @@ UserAccount
 + / anonymous: boolean
 + phone: Phone
 
-
 </panel_attributes>
     <additional_attributes/>
   </element>
