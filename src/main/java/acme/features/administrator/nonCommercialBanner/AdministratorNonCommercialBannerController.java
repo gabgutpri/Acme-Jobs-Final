@@ -18,19 +18,11 @@ public class AdministratorNonCommercialBannerController extends AbstractControll
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorNonCommercialBannerListService		listService;
+	private AdministratorNonCommercialBannerListService	listService;
 
 	@Autowired
-	private AdministratorNonCommercialBannerShowService		showService;
+	private AdministratorNonCommercialBannerShowService	showService;
 
-	@Autowired
-	private AdministratorNonCommercialBannerCreateService	createService;
-
-	@Autowired
-	private AdministratorNonCommercialBannerUpdateService	updateService;
-
-	@Autowired
-	private AdministratorNonCommercialBannerDeleteService	deleteService;
 	// Constructors -----------------------------------------------------------
 
 
@@ -38,9 +30,6 @@ public class AdministratorNonCommercialBannerController extends AbstractControll
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
-		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 
 	}
 }
