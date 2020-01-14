@@ -200,36 +200,6 @@
 	</bean>
 	
 	<!-- BANNERS  -->
-	<bean id="Banner01" class="acme.entities.banners.Banner">
-			<property name="picture" value="8YcXhS0.png"/>
-			<property name="slogan" value="Our planet need superheroes like you"/>
-			<property name="targetUrl" value="https://i.imgur.com/8YcXhS0.png"/>
-	</bean>	
-	
-	<bean id="Banner02" class="acme.entities.banners.Banner">
-			<property name="picture" value="NGLSjk6.png"/>
-			<property name="slogan" value="What would you change?"/>
-			<property name="targetUrl" value="https://i.imgur.com/NGLSjk6.png"/>
-	</bean>	
-	
-	<bean id="Banner03" class="acme.entities.banners.Banner">
-			<property name="picture" value="2eVF1HG.png"/>
-			<property name="slogan" value="afropodei"/>
-			<property name="targetUrl" value="https://i.imgur.com/2eVF1HG.png"/>
-	</bean>	
-	
-	<bean id="Banner04" class="acme.entities.banners.Banner">
-			<property name="picture" value="fihihcF.png"/>
-			<property name="slogan" value="Fundación el gancho infantil"/>
-			<property name="targetUrl" value="https://i.imgur.com/fihihcF.png"/>
-	</bean>	
-	
-	<bean id="Banner05" class="acme.entities.banners.Banner">
-			<property name="picture" value="MtBRoNP.png"/>
-			<property name="slogan" value="Medecins sans frontiers"/>
-			<property name="targetUrl" value="https://i.imgur.com/MtBRoNP.png"/>
-	</bean>	
-	
 		<!-- COMMERCIAL BANNERS -->
 		<bean id="commercialBanner01" class="acme.entities.banners.CommercialBanner">
 				<property name="picture" value="picture1"/>
