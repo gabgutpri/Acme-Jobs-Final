@@ -18,5 +18,8 @@
 <%request.setAttribute("threadId", request.getParameter("threadId"));  %>
 <acme:list>
 	<acme:list-column code="authenticated.user-account.list.label.username" path="username" width="100%"/>
+	
 </acme:list>
-
+<acme:form>
+<acme:form-return code="authenticated.user-account.form.button.return"/>
+</acme:form>

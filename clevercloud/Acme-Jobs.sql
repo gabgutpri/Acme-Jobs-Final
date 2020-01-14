@@ -98,6 +98,35 @@ INSERT INTO `anonymous` VALUES (2,0,1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `answer`
+--
+
+DROP TABLE IF EXISTS `answer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `answer` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `password_protected` bit(1) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `application_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKqiviwk3b1rfidhy9cajsblq37` (`application_id`),
+  CONSTRAINT `FKqiviwk3b1rfidhy9cajsblq37` FOREIGN KEY (`application_id`) REFERENCES `application` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `answer`
+--
+
+LOCK TABLES `answer` WRITE;
+/*!40000 ALTER TABLE `answer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `answer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `application`
 --
 
@@ -281,6 +310,33 @@ LOCK TABLES `banner` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bulletin`
+--
+
+DROP TABLE IF EXISTS `bulletin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bulletin` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bulletin`
+--
+
+LOCK TABLES `bulletin` WRITE;
+/*!40000 ALTER TABLE `bulletin` DISABLE KEYS */;
+INSERT INTO `bulletin` VALUES (9,0,'FrancoBulletin','I am a developer','Franco'),(10,0,'GutierrezBulletin','I am a developer','Gutierrez'),(11,0,'LopezBulletin','I am a developer','Lopez'),(12,0,'RomeroBulletin','I am a developer','Romero'),(13,0,'VidalBulletin','I am project manager','Vidal'),(25,0,'Pablo','lorem ipsum','D');
+/*!40000 ALTER TABLE `bulletin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `challenge`
 --
 
@@ -378,6 +434,39 @@ LOCK TABLES `company_record` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `company_records`
+--
+
+DROP TABLE IF EXISTS `company_records`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `company_records` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `ceo` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `is_incorporated` bit(1) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `number_stars` int(11) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `sector` varchar(255) DEFAULT NULL,
+  `web_site` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company_records`
+--
+
+LOCK TABLES `company_records` WRITE;
+/*!40000 ALTER TABLE `company_records` DISABLE KEYS */;
+INSERT INTO `company_records` VALUES (9,0,'CEO 1','Description 1','romangutierrez@hotmail.com',NULL,'Solutia',0,'(9999) 999999','Sector 1','https://google.com/'),(10,0,'CEO 2','Description 2','antoniovidaldimision@gmail.com',NULL,'Acme',2,'+9 (9999) 999999','Sector 2','https://google.com/'),(11,0,'CEO 3','Description 3','antonioromerocaceres@gmail.com',NULL,'Acme-Jobs',5,'+999 (9999) 999999','Sector 3','https://google.com/');
+/*!40000 ALTER TABLE `company_records` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `consumer`
 --
 
@@ -460,7 +549,7 @@ CREATE TABLE `customisation_parameter` (
 
 LOCK TABLES `customisation_parameter` WRITE;
 /*!40000 ALTER TABLE `customisation_parameter` DISABLE KEYS */;
-INSERT INTO `customisation_parameter` VALUES (6,1,'sex,hard core,viagra,cialis,nigeria,you\'ve won,million dollar','',1);
+INSERT INTO `customisation_parameter` VALUES (6,0,'sex,hard core,viagra,cialis,nigeria,you\'ve won,million dollar','sexo,hard core,viagra,cialis,nigeria,has ganado,millon de dolares',1);
 /*!40000 ALTER TABLE `customisation_parameter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -623,7 +712,6 @@ CREATE TABLE `franco_bulletin` (
 
 LOCK TABLES `franco_bulletin` WRITE;
 /*!40000 ALTER TABLE `franco_bulletin` DISABLE KEYS */;
-INSERT INTO `franco_bulletin` VALUES (9,0,'Pablo Franco','2019-10-20 22:00:00.000000','Franco Bulletin for Acme Jobs','This is a test Bulletin'),(10,0,'Kvothe','2019-01-20 23:00:00.000000','Una historia que nunca se deberia contar','KingsKiller'),(20,0,'Prueba del create de Franco','2019-10-22 16:25:00.000000','Sumar','Texto de prueba');
 /*!40000 ALTER TABLE `franco_bulletin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -652,7 +740,6 @@ CREATE TABLE `gutierrez_bulletin` (
 
 LOCK TABLES `gutierrez_bulletin` WRITE;
 /*!40000 ALTER TABLE `gutierrez_bulletin` DISABLE KEYS */;
-INSERT INTO `gutierrez_bulletin` VALUES (22,0,'2019-10-22 16:29:08.046000','Prueba del create de Gabo','Pues casi juego de tronos','Aun no leida','Texto de prueba del Text');
 /*!40000 ALTER TABLE `gutierrez_bulletin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -768,7 +855,6 @@ CREATE TABLE `lopez_bulletin` (
 
 LOCK TABLES `lopez_bulletin` WRITE;
 /*!40000 ALTER TABLE `lopez_bulletin` DISABLE KEYS */;
-INSERT INTO `lopez_bulletin` VALUES (11,0,'Seville','2019-08-06 07:00:00.000000','Thibaut Lopez','I am a developer'),(12,0,'Las Vegas','2017-07-08 01:00:00.000000','Pepe Botella',' I\'m drinking'),(13,0,'Eqypt','1989-08-26 16:00:00.000000','Jotaro Kujo','Kicking Dio\'s ass'),(21,0,'Huelva','2019-10-22 16:28:01.070000','Prueba en el create de Thibaut','Texto de Prueba del Text');
 /*!40000 ALTER TABLE `lopez_bulletin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -969,6 +1055,32 @@ LOCK TABLES `provider` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `regard`
+--
+
+DROP TABLE IF EXISTS `regard`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `regard` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `ticker` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `regard`
+--
+
+LOCK TABLES `regard` WRITE;
+/*!40000 ALTER TABLE `regard` DISABLE KEYS */;
+INSERT INTO `regard` VALUES (492,0,'Probando','http://www.contigoPipo.com'),(493,0,'Probando 2','http://www.contigoPipo.com');
+/*!40000 ALTER TABLE `regard` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `request_`
 --
 
@@ -1000,35 +1112,30 @@ LOCK TABLES `request_` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `requests`
+-- Table structure for table `request_auditor`
 --
 
-DROP TABLE IF EXISTS `requests`;
+DROP TABLE IF EXISTS `request_auditor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `requests` (
+CREATE TABLE `request_auditor` (
   `id` int(11) NOT NULL,
   `version` int(11) NOT NULL,
-  `deadline` datetime(6) DEFAULT NULL,
-  `moment` datetime(6) DEFAULT NULL,
-  `reward_amount` double DEFAULT NULL,
-  `reward_currency` varchar(255) DEFAULT NULL,
-  `text` varchar(255) DEFAULT NULL,
-  `ticker` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_5v1h0kdr8vcps4i9e55k5gnc8` (`ticker`)
+  `firm` varchar(255) DEFAULT NULL,
+  `request1` bit(1) NOT NULL,
+  `statement` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `requests`
+-- Dumping data for table `request_auditor`
 --
 
-LOCK TABLES `requests` WRITE;
-/*!40000 ALTER TABLE `requests` DISABLE KEYS */;
-INSERT INTO `requests` VALUES (9,0,'2019-06-30 08:35:00.000000','2019-06-10 08:35:00.000000',9000,'€','This is the description of a request','RABCD-12345','Request 01'),(10,0,'2018-07-29 08:35:00.000000','2018-07-10 08:35:00.000000',2000,'€','This is the description of a request','RABCD-12346','Request 02'),(11,0,'2019-01-17 11:00:00.000000','2019-01-15 09:35:00.000000',10000,'€','This is the description of a request','REBCD-62345','Request 03');
-/*!40000 ALTER TABLE `requests` ENABLE KEYS */;
+LOCK TABLES `request_auditor` WRITE;
+/*!40000 ALTER TABLE `request_auditor` DISABLE KEYS */;
+INSERT INTO `request_auditor` VALUES (725,0,'SSSSS',_binary '\0','SSSSSSS');
+/*!40000 ALTER TABLE `request_auditor` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1055,7 +1162,6 @@ CREATE TABLE `romero_bulletin` (
 
 LOCK TABLES `romero_bulletin` WRITE;
 /*!40000 ALTER TABLE `romero_bulletin` DISABLE KEYS */;
-INSERT INTO `romero_bulletin` VALUES (17,0,'Student of the University of Seville','2019-08-06 23:00:00.000000','Antonio Romero','I am a developer'),(18,0,'Student of the University of Seville','2019-07-06 23:00:00.000000','Rodrigo Vidal',' I\'m working'),(19,0,'I\'m not very smart','2019-06-06 23:00:00.000000','Rodrigo Vidal','I am jobless'),(24,0,'Pues muy larga','2019-10-22 16:31:42.611000','Ricardio','Quien sabe lo que piensa el niño');
 /*!40000 ALTER TABLE `romero_bulletin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1082,7 +1188,6 @@ CREATE TABLE `shout` (
 
 LOCK TABLES `shout` WRITE;
 /*!40000 ALTER TABLE `shout` DISABLE KEYS */;
-INSERT INTO `shout` VALUES (6,0,'John Don','2019-09-09 08:00:00.000000','I\'m happy!'),(7,0,'Jane Doe','2019-08-09 13:55:00.000000','I\'m the master of my room!'),(8,0,'Foo Bar','2019-09-06 22:00:00.000000','Just turning 20\'');
 /*!40000 ALTER TABLE `shout` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1114,7 +1219,7 @@ CREATE TABLE `solicit` (
 
 LOCK TABLES `solicit` WRITE;
 /*!40000 ALTER TABLE `solicit` DISABLE KEYS */;
-INSERT INTO `solicit` VALUES (10,0,'2019-06-30 08:35:00.000000','2019-06-10 08:35:00.000000',9000,'€','This is the description of a request','RABCD-12378','Request 01'),(11,0,'2018-07-29 08:35:00.000000','2018-07-10 08:35:00.000000',2000,'€','This is the description of a request','RABCD-12346','Request 02'),(12,0,'2019-01-17 11:00:00.000000','2019-01-15 09:35:00.000000',10000,'€','This is the description of a request','REBCD-62345','Request 03');
+INSERT INTO `solicit` VALUES (10,0,'2019-06-30 08:35:00.000000','2019-06-10 08:35:00.000000',9000,'€','This is the description of a request','RABCD-12378','Request 01'),(11,0,'2018-07-29 08:35:00.000000','2018-07-10 08:35:00.000000',2000,'€','This is the description of a request','RABCD-12346','Request 02'),(12,0,'2019-01-17 11:00:00.000000','2019-01-15 09:35:00.000000',10000,'€','This is the description of a request','REBCD-62345','Request 03'),(25,0,'2040-12-22 11:50:00.000000','2019-11-14 16:23:25.706000',1250,'€','Prueba22','RABCD-12377','Prueba1'),(26,0,'2019-11-17 13:00:00.000000','2019-11-15 12:52:18.098000',1250,'EUR','assaas','RABCD-12379','Prueba1'),(27,0,'2019-11-17 12:58:00.000000','2019-11-15 12:59:37.438000',123456,'EUR','ffsff','RABCD-12390','Prueba1'),(30,0,'2020-11-15 17:02:00.000000','2019-11-15 17:02:51.985000',123456,'EUR','Probando','RABCD-12399','Probando');
 /*!40000 ALTER TABLE `solicit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1158,6 +1263,9 @@ CREATE TABLE `user_account` (
   `enabled` bit(1) NOT NULL,
   `identity_email` varchar(255) DEFAULT NULL,
   `identity_name` varchar(255) DEFAULT NULL,
+  `identity_phone_area_code` varchar(255) DEFAULT NULL,
+  `identity_phone_country_code` int(11) DEFAULT NULL,
+  `identity_phone_number` varchar(255) DEFAULT NULL,
   `identity_surname` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
@@ -1172,7 +1280,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$/Q1h2m09gmleEeumcJIdaOwK7QBHpXgNrrA8/OpLBDxG/z4.9BCzS','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$H31KmBHoF3BD1kJI8qwuPubjQRcxbxP76qOQks/N3D2bjoCo4B4Ze','administrator');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John',NULL,NULL,NULL,'Doe','$2a$05$EQ54gcnBDsnyh3BKQTb6re7NkV6PdqP3u7HDEdT7fDrJGU/7C39KW','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator',NULL,NULL,NULL,'Acme.com','$2a$05$OJmgW1.bHkT48fFoQiPefOfskdze82JS0PSdpjneOqRFuY7jvJCWi','administrator');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1200,7 +1308,6 @@ CREATE TABLE `vidal_bulletin` (
 
 LOCK TABLES `vidal_bulletin` WRITE;
 /*!40000 ALTER TABLE `vidal_bulletin` DISABLE KEYS */;
-INSERT INTO `vidal_bulletin` VALUES (14,0,'John Don','I\'m happy!','Increible alumno encuentra Leslie!','ACADEMIC'),(15,0,'Jane Doe','Al parecer NO estaba en lo cierto y conduce al fracaso.','Leslie descubre la formula para aprobar','SCIENTIFIC'),(16,0,'Foo Bar','La realidad es que Leslie lo que quiere es vaguear.','Leslie al descubierto','OTHER'),(23,0,'Paco','Y o que se','Cientifico Nacional Geografic','SCIENTIFIC');
 /*!40000 ALTER TABLE `vidal_bulletin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1231,6 +1338,58 @@ LOCK TABLES `worker` WRITE;
 /*!40000 ALTER TABLE `worker` DISABLE KEYS */;
 /*!40000 ALTER TABLE `worker` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `xxxx`
+--
+
+DROP TABLE IF EXISTS `xxxx`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `xxxx` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `more_info` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `xxxx`
+--
+
+LOCK TABLES `xxxx` WRITE;
+/*!40000 ALTER TABLE `xxxx` DISABLE KEYS */;
+INSERT INTO `xxxx` VALUES (461,0,'http://www.moreInfo.com','text'),(491,0,'','x');
+/*!40000 ALTER TABLE `xxxx` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `xxxx1`
+--
+
+DROP TABLE IF EXISTS `xxxx1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `xxxx1` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `more_info` varchar(255) DEFAULT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `xxxx1`
+--
+
+LOCK TABLES `xxxx1` WRITE;
+/*!40000 ALTER TABLE `xxxx1` DISABLE KEYS */;
+INSERT INTO `xxxx1` VALUES (466,0,'http://www.contigoPipo.com','Probando'),(467,0,'http://www.contigoPipo.com','Probando 2');
+/*!40000 ALTER TABLE `xxxx1` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1241,4 +1400,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-18 22:05:29
+-- Dump completed on 2020-01-14 11:25:27

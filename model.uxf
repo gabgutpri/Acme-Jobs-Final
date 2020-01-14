@@ -16,17 +16,6 @@ bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>455</x>
-      <y>210</y>
-      <w>434</w>
-      <h>147</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>600.0;10.0;600.0;120.0;10.0;120.0;10.0;190.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>231</x>
@@ -70,17 +59,6 @@ bg=blue</panel_attributes>
     <panel_attributes>lt=..
 </panel_attributes>
     <additional_attributes>10.0;20.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>609</x>
-      <y>210</y>
-      <w>294</w>
-      <h>147</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>400.0;10.0;400.0;130.0;10.0;130.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -178,36 +156,6 @@ CustomCommand
 + CORRESPONDING
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>392</x>
-      <y>343</y>
-      <w>140</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Provider
---
-+ company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>539</x>
-      <y>343</y>
-      <w>140</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Consumer
---
-+ company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

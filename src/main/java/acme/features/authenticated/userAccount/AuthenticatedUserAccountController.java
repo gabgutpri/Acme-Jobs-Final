@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
@@ -27,17 +28,23 @@ import acme.framework.entities.UserAccount;
 @RequestMapping("/authenticated/user-account/")
 public class AuthenticatedUserAccountController extends AbstractController<Authenticated, UserAccount> {
 
-	// Internal state ---------------------------------------------------------
+	@Autowired
+	private AuthenticatedUserAccountUpdateService		updateService;
 
 	@Autowired
-	private AuthenticatedUserAccountUpdateService updateService;
+	private AuthenticatedUsersListUsersOfThreadService	listUserThreadService;
+
+	@Autowired
+	private AuthenticatedUserAccountShowService			showService;
 
 
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
+		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addCustomCommand(CustomCommand.LIST_USERS, BasicCommand.LIST, this.listUserThreadService);
 	}
 
 }
