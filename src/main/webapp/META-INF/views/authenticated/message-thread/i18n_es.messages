@@ -25,8 +25,8 @@ authenticated.message-thread.form.button.seeUsers = Ver usuarios
 authenticated.message-thread.form.button.create = Crear
 authenticated.message-thread.form.button.return = Volver
 
-authenticated.user-account.list.label.user = Añadir usuario (username):
-authenticated.user-account.list.label.add = Añadir
+authenticated.message-thread.list.label.user = Añadir usuario (username):
+authenticated.message-thread.list.label.add = Añadir
 
 authenticated.message-thread.list.label.user.remove = Eliminar usuario (username):
 authenticated.message-thread.list.label.remove = Eliminar
