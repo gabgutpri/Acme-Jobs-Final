@@ -42,6 +42,7 @@
 			<acme:menu-separator/>
 			
 			<acme:menu-suboption code="master.menu.authenticated.messageThread.list" action="/authenticated/message-thread/list-mine"/>
+			<acme:menu-suboption code="master.menu.authenticated.messageThread.create" action="/authenticated/message-thread/create"/>
 
 		</acme:menu-option>
 	
@@ -50,9 +51,6 @@
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.announcement.list" action="/administrator/announcement/list"/>
-			<acme:menu-suboption code="master.menu.administrator.commercial-banner.list" action="/administrator/commercial-banner/list"/>
-			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner.list" action="/administrator/non-commercial-banner/list"/>
-			
 			<acme:menu-separator/>
 			
 			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create"/>	

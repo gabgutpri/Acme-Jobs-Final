@@ -25,6 +25,6 @@ authenticated.message.form.label.body = Cuerpo
 authenticated.message.form.label.accept = El mensaje no puede ser editado o borrado. ¿Seguro que quieres enviar el mensaje?
 
 administrator.message.form.button.create = Enviar mensaje
-authenticated.message-thread.form.button.return = Volver
+authenticated.message.form.button.return = Volver
 
 authenticated.message.error.must-accept = Debes aceptar antes de enviar el mensaje
