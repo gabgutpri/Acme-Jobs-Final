@@ -26,5 +26,5 @@
 	</jstl:if>
 	<acme:form-submit test="${command == 'create'}" code="administrator.message.form.button.create" action="/authenticated/message/create?threadId=${threadId}"/>
 	
-	<acme:form-return code="authenticated.message-thread.form.button.return"/>
+	<acme:form-return code="authenticated.message.form.button.return"/>
 </acme:form>
