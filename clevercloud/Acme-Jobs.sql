@@ -306,6 +306,7 @@ CREATE TABLE `banner` (
 
 LOCK TABLES `banner` WRITE;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
+INSERT INTO `banner` VALUES (7,0,'8YcXhS0.png','Our planet need superheroes like you','https://i.imgur.com/8YcXhS0.png',NULL),(8,0,'NGLSjk6.png','What would you change?','https://i.imgur.com/NGLSjk6.png',NULL),(9,0,'2eVF1HG.png','afropodei','https://i.imgur.com/2eVF1HG.png',NULL),(10,0,'fihihcF.png','Fundación el gancho infantil','https://i.imgur.com/fihihcF.png',NULL),(11,0,'MtBRoNP.png','Medecins sans frontiers','https://i.imgur.com/MtBRoNP.png',NULL);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -761,7 +762,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (7);
+INSERT INTO `hibernate_sequence` VALUES (12);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1280,7 +1281,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John',NULL,NULL,NULL,'Doe','$2a$05$EQ54gcnBDsnyh3BKQTb6re7NkV6PdqP3u7HDEdT7fDrJGU/7C39KW','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator',NULL,NULL,NULL,'Acme.com','$2a$05$OJmgW1.bHkT48fFoQiPefOfskdze82JS0PSdpjneOqRFuY7jvJCWi','administrator');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John',NULL,NULL,NULL,'Doe','$2a$05$HCYmnS9lewvQz9cNod.brOL6u9ue0ih7Oa5l9Nmlt5vbzwaHwPF8O','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator',NULL,NULL,NULL,'Acme.com','$2a$05$NVpLy0.olMYgrrukcYE.FOy9yR2t8XzhCgDezzSFb90RreFFuTQqW','administrator');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1400,4 +1401,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-14 11:25:27
+-- Dump completed on 2020-01-14 19:38:36
