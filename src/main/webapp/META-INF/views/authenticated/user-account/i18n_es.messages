@@ -17,8 +17,11 @@ authenticated.user-account.form.label.confirmation = Confirmación:
 authenticated.user-account.form.label.name = Nombre:
 authenticated.user-account.form.label.surname = Apellidos:
 authenticated.user-account.form.label.email = E-mail:
+authenticated.user-account.form.label.phone = Teléfono:
  
 authenticated.user-account.form.button.update = Actualizar
 authenticated.user-account.form.button.return = Volver
+default.error.conversion = Error al convertir el teléfono
+default.placeholder.phone = +País (Area) Número
 
 authenticated.user-account.form.error.confirmation-no-match = La confirmación de la contraseña no cuadra

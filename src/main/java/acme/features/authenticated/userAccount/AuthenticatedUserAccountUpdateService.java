@@ -67,6 +67,7 @@ public class AuthenticatedUserAccountUpdateService implements AbstractUpdateServ
 		assert model != null;
 
 		request.unbind(entity, model, "username", "identity.name", "identity.surname", "identity.email");
+		model.setAttribute("identity.phone", entity.getIdentity().getPhone());
 
 		if (request.isMethod(HttpMethod.POST)) {
 			request.transfer(model, "password");
