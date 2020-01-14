@@ -204,7 +204,7 @@
 		<bean id="commercialBanner01" class="acme.entities.banners.CommercialBanner">
 				<property name="picture" value="picture1"/>
 				<property name="slogan" value="Pipo's Legend"/>
-				<property name="targetUrl" value="http://papaoso.com"/>
+				<property name="targetUrl" value="https://i1.wp.com/www.lagraderia.com/wp-content/uploads/2018/12/no-imagen.jpg?fit=300%2C300"/>
 				<property name="sponsor">
 					<ref bean="sponsorSponsor01"/>
 				</property>
@@ -216,7 +216,7 @@
 		<bean id="commercialBanner02" class="acme.entities.banners.CommercialBanner">
 				<property name="picture" value="picture2"/>
 				<property name="slogan" value="No gods or kings, only man"/>
-				<property name="targetUrl" value="http://rapture.com"/>
+				<property name="targetUrl" value="https://i1.wp.com/www.lagraderia.com/wp-content/uploads/2018/12/no-imagen.jpg?fit=300%2C300"/>
 				<property name="sponsor">
 					<ref bean="sponsorSponsor01"/>
 				</property>
@@ -228,7 +228,7 @@
 		<bean id="commercialBanner03" class="acme.entities.banners.CommercialBanner">
 				<property name="picture" value="picture3"/>
 				<property name="slogan" value="Vivimos en una sandwichera"/>
-				<property name="targetUrl" value="http://elbromas.com"/>
+				<property name="targetUrl" value="https://i1.wp.com/www.lagraderia.com/wp-content/uploads/2018/12/no-imagen.jpg?fit=300%2C300"/>
 				<property name="sponsor">
 					<ref bean="sponsorSponsor01"/>
 				</property>
@@ -242,7 +242,7 @@
 				<property name="picture" value="picture1"/>
 				<property name="slogan" value="Como dijo Socrates: No es momento para provervios"/>
 				<property name="jingle" value="Boom"/>
-				<property name="targetUrl" value="http://chemitasmatesways.com"/>
+				<property name="targetUrl" value="https://i1.wp.com/www.lagraderia.com/wp-content/uploads/2018/12/no-imagen.jpg?fit=300%2C300"/>
 				<property name="sponsor">
 					<ref bean="sponsorSponsor02"/>
 				</property>
@@ -251,7 +251,7 @@
 				<property name="picture" value="picture2"/>
 				<property name="slogan" value="¡¡Que no lo he enchufado!!"/>
 				<property name="jingle" value="FIUUN"/>
-				<property name="targetUrl" value="http://airplaneES.com"/>
+				<property name="targetUrl" value="https://statics.memondo.com/p/99/ccs/2014/11/CC_2395231_b6dc0935fdf543b6bb34396a04bdeca0_meme_otros_todos_estamos_asi_a_finales_de_cada_semestre.jpg?cb=3037192"/>
 				<property name="sponsor">
 					<ref bean="sponsorSponsor02"/>
 				</property>
