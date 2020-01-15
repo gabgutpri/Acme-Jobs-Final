@@ -94,18 +94,19 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			errors.state(request, existing == null, "reference", "employer.job.form.error.duplicate");
 		}
 
+		boolean esFinal = false;
+
 		if (!errors.hasErrors("deadline")) {
 			boolean esFuturo = false;
 			if (entity.getDeadline() != null) {
 				esFuturo = hoy.before(entity.getDeadline());
+				if (entity.getStatus() != null) {
+					esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
+				}
 			}
 			errors.state(request, esFuturo, "deadline", "employer.job.error.deadline.esFuturo");
 		}
 
-		boolean esFinal = false;
-		if (entity.getStatus() != null) {
-			esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
-		}
 		if (esFinal) {
 			int id = Integer.parseInt(stringId);
 			Descriptor descriptor = this.repository.findDescriptorById(id);

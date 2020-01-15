@@ -18,6 +18,8 @@ employer.duty.form.label.idDescriptor = Descriptor
 employer.duty.form.button.create = Crear
 employer.duty.form.button.return= Volver
 
+employer.duty.error.percentage100 = Este porcentaje es demasiado para este descriptor
+
 #DUTY LIST
 employer.duty.list.label.title= Título
 employer.duty.list.label.description= Descripción

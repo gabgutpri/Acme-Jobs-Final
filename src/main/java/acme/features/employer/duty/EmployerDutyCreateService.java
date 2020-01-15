@@ -65,6 +65,25 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		request.getModel().setAttribute("descriptors", descriptors);
+
+		String stringId = (String) request.getModel().getAttribute("idDescriptor");
+		if (stringId == "null") {
+			errors.state(request, stringId == "null", "idDescriptor", "employer.job.error.status.noDescriptor");
+		}
+
+		if (!errors.hasErrors("idDescriptor") && !errors.hasErrors("percentage")) {
+			int id = Integer.parseInt(stringId);
+			Descriptor descriptor = this.repository.findDescriptorById(id);
+			double sum = 0;
+			for (Duty d : descriptor.getDuties()) {
+				sum = sum + d.getPercentage();
+			}
+			sum = sum + request.getModel().getDouble("percentage");
+			errors.state(request, sum <= 100.00, "percentage", "employer.duty.error.percentage100");
+		}
 	}
 
 	@Override

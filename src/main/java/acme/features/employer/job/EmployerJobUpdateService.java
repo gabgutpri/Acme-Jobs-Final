@@ -53,10 +53,21 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		if (!errors.hasErrors("reference")) {
+			String oldRef = this.repository.findOneJobById(entity.getId()).getReference();
+			String newRef = (String) request.getModel().getAttribute("reference");
+			if (!newRef.contentEquals(oldRef)) {
+				Job existing = this.repository.findOneReference(entity.getReference());
+				errors.state(request, existing == null, "reference", "employer.job.form.error.duplicate");
+			}
+
+		}
+
 		Date hoy = new Date();
 
 		if (entity.getDeadline() != null && entity.getStatus() != null) {
-			boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
+			Status actual = this.repository.findOneJobById(entity.getId()).getStatus();
+			boolean esFinal = hoy.before(entity.getDeadline()) && actual.equals(Status.PUBLISHED);
 			errors.state(request, !esFinal, "status", "employer.job.error.status.esFinal");
 		}
 	}
